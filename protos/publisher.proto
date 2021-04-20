@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pubsub.v1alpha1;
+
+import "google/protobuf/empty.proto";
+
+message PublishRequest {
+    string topic = 1;
+}
+
+service Publisher {
+    rpc Publish(PublishRequest) returns (google.protobuf.Empty);
+}
